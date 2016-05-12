@@ -42,7 +42,7 @@ class PbsExecutor extends AbstractGridExecutor {
     protected List<String> getDirectives( TaskRun task, List<String> result ) {
         assert result !=null
 
-        result << '-d' << task.workDir.toString()
+        //result << '-d' << task.workDir.toString()
         result << '-N' << getJobNameFor(task)
         result << '-o' << task.workDir.resolve(TaskRun.CMD_LOG).toString()
         result << '-j' << 'oe'
