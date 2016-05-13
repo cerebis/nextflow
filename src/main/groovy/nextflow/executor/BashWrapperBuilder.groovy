@@ -390,8 +390,8 @@ class BashWrapperBuilder {
         // execute the command script
         wrapper << '' << ENDL
         wrapper << 'set +e' << ENDL  // <-- note: use loose error checking so that ops after the script command are executed in all cases
-        wrapper << 'COUT=$PWD/.command.po; mkfifo "$COUT"' << ENDL
-        wrapper << 'CERR=$PWD/.command.pe; mkfifo "$CERR"' << ENDL
+        wrapper << 'COUT=$PWD/command.po; mkfifo "$COUT"' << ENDL
+        wrapper << 'CERR=$PWD/command.pe; mkfifo "$CERR"' << ENDL
         wrapper << 'tee '<< TaskRun.CMD_OUTFILE <<' < "$COUT" &' << ENDL
         wrapper << 'tee1=$!' << ENDL
         wrapper << 'tee '<< TaskRun.CMD_ERRFILE <<' < "$CERR" >&2 &' << ENDL

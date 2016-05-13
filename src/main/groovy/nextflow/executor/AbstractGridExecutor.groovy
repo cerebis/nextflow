@@ -101,6 +101,11 @@ abstract class AbstractGridExecutor extends Executor {
             header.clear()
         }
 
+	String scriptlet = getBefore()
+	if (scriptlet != null) {
+		result << scriptlet << '\n'
+	}
+
         return result.toString()
     }
 
@@ -108,6 +113,10 @@ abstract class AbstractGridExecutor extends Executor {
      * @return String used to declare job directives in the job script wrapper
      */
     abstract protected String getHeaderToken()
+
+    protected String getBefore() {
+	return null
+    }
 
     /**
      * @param task The current task object
