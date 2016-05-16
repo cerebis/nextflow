@@ -32,7 +32,7 @@ import nextflow.processor.TaskRun
  * @author Paolo Di Tommaso <paolo.ditommaso@gmail.com>
  */
 @Slf4j
-class SlurmExecutor extends AbstractGridExecutor {
+class SlurmExecutor extends BaseGridExecutor {
 
     /**
      * Gets the directives to submit the specified task to the cluster for execution

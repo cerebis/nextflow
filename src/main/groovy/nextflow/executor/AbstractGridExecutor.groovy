@@ -101,10 +101,7 @@ abstract class AbstractGridExecutor extends Executor {
             header.clear()
         }
 
-        String scriptlet = getBefore()
-        if (scriptlet != null) {
-            result << scriptlet << '\n'
-        }
+        result << getBeforeScriptlet() << '\n'
 
         return result.toString()
     }
@@ -114,9 +111,13 @@ abstract class AbstractGridExecutor extends Executor {
      */
     abstract protected String getHeaderToken()
 
-    protected String getBefore() {
-	    return null
-    }
+    /**
+     * Scriptlet body to be used by concrete executors for providing additional
+     * configuration or setup that cannot be achieved through directives.
+     *
+     * @return String representing additional non-directive set-up
+     */
+    abstract protected String getBeforeScriptlet()
 
     /**
      * @param task The current task object

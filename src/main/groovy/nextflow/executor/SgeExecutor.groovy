@@ -28,7 +28,7 @@ import nextflow.processor.TaskRun
  *
  * @author Paolo Di Tommaso <paolo.ditommaso@gmail.com>
  */
-class SgeExecutor extends AbstractGridExecutor {
+class SgeExecutor extends BaseGridExecutor {
 
     /**
      * Gets the directives to submit the specified task to the cluster for execution

@@ -28,7 +28,8 @@ class PbsProExecutor extends PbsExecutor {
         }
     }
 
-    protected String getBefore(TaskRun task) {
+    @Override
+    protected String getBeforeScriptlet() {
         return "cd " + task.workDir.toString()
     }
 

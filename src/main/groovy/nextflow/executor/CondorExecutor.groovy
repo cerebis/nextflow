@@ -30,7 +30,7 @@ import nextflow.processor.TaskRun
  *
  * @author Paolo Di Tommaso <paolo.ditommaso@gmail.com>
  */
-class CondorExecutor extends AbstractGridExecutor {
+class CondorExecutor extends BaseGridExecutor {
 
     static final public String CMD_CONDOR = '.command.condor'
 

@@ -30,7 +30,7 @@ import nextflow.processor.TaskRun
  * See http://www.pbsworks.com
  */
 @Slf4j
-class PbsExecutor extends AbstractGridExecutor {
+class PbsExecutor extends BaseGridExecutor {
 
     /**
      * Gets the directives to submit the specified task to the cluster for execution
@@ -42,7 +42,7 @@ class PbsExecutor extends AbstractGridExecutor {
     protected List<String> getDirectives( TaskRun task, List<String> result ) {
         assert result !=null
 
-        //result << '-d' << task.workDir.toString()
+        result << '-d' << task.workDir.toString()
         result << '-N' << getJobNameFor(task)
         result << '-o' << task.workDir.resolve(TaskRun.CMD_LOG).toString()
         result << '-j' << 'oe'
@@ -86,6 +86,8 @@ class PbsExecutor extends AbstractGridExecutor {
     List<String> getSubmitCommandLine(TaskRun task, Path scriptFile ) {
         [ 'qsub', scriptFile.getName() ]
     }
+
+
 
     protected String getHeaderToken() { '#PBS' }
 

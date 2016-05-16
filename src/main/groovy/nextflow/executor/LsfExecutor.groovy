@@ -34,7 +34,7 @@ import nextflow.util.MemoryUnit
  *
  * @author Paolo Di Tommaso <paolo.ditommaso@gmail.com>
  */
-class LsfExecutor extends AbstractGridExecutor {
+class LsfExecutor extends BaseGridExecutor {
 
     /**
      * Gets the directives to submit the specified task to the cluster for execution
