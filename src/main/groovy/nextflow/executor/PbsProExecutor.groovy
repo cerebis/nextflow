@@ -24,7 +24,6 @@ class PbsProExecutor extends PbsExecutor {
         return name.substring(0, MAX_NAME_LENGTH)
     }
 
-    @Override
     protected String getBefore(TaskRun task) {
         return "cd " + task.workDir.toString()
     }
