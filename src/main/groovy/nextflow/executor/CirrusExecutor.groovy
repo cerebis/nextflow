@@ -42,7 +42,7 @@ import nextflow.util.Duration
 
 @Slf4j
 @ServiceName('cirrus')
-class CirrusExecutor extends AbstractGridExecutor {
+class CirrusExecutor extends BaseGridExecutor {
 
     @Override
     void register() {
