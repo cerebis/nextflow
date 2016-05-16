@@ -101,10 +101,10 @@ abstract class AbstractGridExecutor extends Executor {
             header.clear()
         }
 
-	String scriptlet = getBefore()
-	if (scriptlet != null) {
-		result << scriptlet << '\n'
-	}
+        String scriptlet = getBefore()
+        if (scriptlet != null) {
+            result << scriptlet << '\n'
+        }
 
         return result.toString()
     }
@@ -115,7 +115,7 @@ abstract class AbstractGridExecutor extends Executor {
     abstract protected String getHeaderToken()
 
     protected String getBefore() {
-	return null
+	    return null
     }
 
     /**

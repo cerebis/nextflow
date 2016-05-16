@@ -82,11 +82,6 @@ class PbsExecutor extends AbstractGridExecutor {
         return result
     }
 
-    @Override
-    String getBefore() {
-        return "cd \$PBS_O_WORKDIR"
-    }
-
     /**
      * The command line to submit this job
      *
