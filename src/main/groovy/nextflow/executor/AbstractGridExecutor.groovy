@@ -101,7 +101,7 @@ abstract class AbstractGridExecutor extends Executor {
             header.clear()
         }
 
-        result << getBeforeScriptlet() << '\n'
+        result << getBeforeScriptlet(task) << '\n'
 
         return result.toString()
     }
@@ -117,7 +117,7 @@ abstract class AbstractGridExecutor extends Executor {
      *
      * @return String representing additional non-directive set-up
      */
-    abstract protected String getBeforeScriptlet()
+    abstract protected String getBeforeScriptlet(TaskRun task)
 
     /**
      * @param task The current task object
