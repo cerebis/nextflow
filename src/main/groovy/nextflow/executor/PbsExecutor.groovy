@@ -32,12 +32,6 @@ import nextflow.processor.TaskRun
 @Slf4j
 class PbsExecutor extends AbstractGridExecutor {
 
-    @Override
-    protected String getJobNameFor(TaskRun task) {
-	return ('nf' + task.getName().replaceAll(/[ \(\)]/) {''}).toString()
-    }
-
-
     /**
      * Gets the directives to submit the specified task to the cluster for execution
      *

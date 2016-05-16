@@ -19,9 +19,13 @@ class PbsProExecutor extends PbsExecutor {
      */
     @Override
     protected String getJobNameFor(TaskRun task) {
-        // remove non-alphanumeric
         String name = ('nf' + task.getName().replaceAll(/\W/) {''}).toString()
-        return name.substring(0, MAX_NAME_LENGTH)
+        if (name.size() <= MAX_NAME_LENGTH) {
+            return name
+        }
+        else {
+            return name.substring(0, MAX_NAME_LENGTH)
+        }
     }
 
     protected String getBefore(TaskRun task) {
