@@ -233,7 +233,7 @@ class PublishDir {
         }
         catch( FileAlreadyExistsException e ) {
             if( overwrite ) {
-                FilesEx.deleteDir(destination)
+                FilesEx.deleteIfExists(destination)
                 processFileImpl(source, destination)
             }
         }

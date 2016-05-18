@@ -59,18 +59,16 @@ class FilesEx {
 
     private static LF = 0x0A
 
-
     /**
      * Check if a file - or - a directory is empty
      *
      * @param file The file under test
      * @return {@code true} if the file does not exist or it is empty
      */
-    def static boolean empty( File file ) {
+    def static boolean empty(File file) {
         FileHelper.empty(file)
     }
 
-
     /**
      *
      * Check if a file - or - a directory is empty
@@ -78,8 +76,23 @@ class FilesEx {
      * @param file The file under test
      * @return {@code true} if the file does not exist or it is empty
      */
-    def static boolean empty( Path path ) {
+    def static boolean empty(Path path) {
         FileHelper.empty(path)
+    }
+
+    /**
+     * Deletes an existing file or symlink (whether broken or not). This is
+     * different to behaviour of .delete() which will not delete a broken
+     * symlink.
+     */
+    def static boolean deleteIfExists(Path path) {
+        try {
+            Files.deleteIfExists(path)
+            return true
+        }
+        catch ( IOException e ) {
+            return false
+        }
     }
 
     /**
