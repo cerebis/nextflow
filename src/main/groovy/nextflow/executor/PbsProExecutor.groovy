@@ -30,7 +30,7 @@ class PbsProExecutor extends PbsExecutor {
                 return name.substring(0, MAX_NAME_LENGTH)
             }
             else {
-                n = MAX_NAME_LENGTH - matcher[0][2].size()
+                int n = MAX_NAME_LENGTH - ((String)matcher[0][2]).size()
                 return matcher[0][1].substring(0,n) + matcher[0][2]
             }
         }
