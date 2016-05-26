@@ -25,13 +25,13 @@ class PbsProExecutor extends PbsExecutor {
         }
         else {
             // shorten names but preserve appended task index if they exist
-            match = name =~ /(.*?)(\d+)/
-            if (match.count == 0) {
+            def matcher = name =~ /(.*?)(\d+)/
+            if (matcher.count == 0) {
                 return name.substring(0, MAX_NAME_LENGTH)
             }
             else {
-                n = MAX_NAME_LENGTH - match[0][2].size()
-                return match[0][1].substring(0,n) + match[0][2]
+                n = MAX_NAME_LENGTH - matcher[0][2].size()
+                return matcher[0][1].substring(0,n) + matcher[0][2]
             }
         }
     }
